@@ -17,43 +17,32 @@ struct StrategyTable: StrategyTablePublicValue {
 //    var table: [String] // ["001", "010"]
     let selectedStrategy: [String] // [00000001, 00000101, 11111111]
     var history: String
-    var selectedTable: Int
+    var selectedTableIndex: Int
     var selectedStrategyIndex: Int
     
     init(m: Int, s: Int) {
-//        var table: [String] = []
         self.point = []
         for _ in 0 ..< s {
             self.point.append(0)
         }
         
-        let tableValues: [Int] = Array(0 ..< Int(pow(Double(2), (pow(Double(2), Double(m)))))).shuffled()
+        var tableValues: [String] = randomM2(s: s).map { String($0, radix: 2) }
         
-        var stringTables = tableValues.prefix(s).map { String($0, radix: 2) }
+//        var stringTables = tableValues.prefix(s).map { String($0, radix: 2) }
         let historyLenght = Int(pow(Double(2), Double(m)))
-        for i in 0 ..< stringTables.count {
-            while (historyLenght !=  stringTables[i].count) {
-                stringTables[i] = "0" + stringTables[i]
+        for i in 0 ..< tableValues.count {
+            while (historyLenght !=  tableValues[i].count) {
+                tableValues[i] = "0" + tableValues[i]
                 
             }
         }
-        self.selectedStrategy = stringTables
+        self.selectedStrategy = tableValues
         
-//        for i in 0 ..< Int(pow(Double(2), Double(m))) {
-//            var value = String(i, radix: 2)
-//            while value.count != m {
-//                value = "0" + value
-//            }
-//            table.append(value)
-//        }
-//        self.table = table
+        self.selectedTableIndex = randomM()
         
-        let randomValue: [Int] = Array(0 ..< Int(pow(Double(2), Double(m)))).shuffled().prefix(1).map { $0 }
-        
-        self.history = String(randomValue[0], radix: 2)
+        self.history = randomHistory(m: m)
         
         let selectedStringIndex = Int(history, radix: 2)!
-        self.selectedTable = 0
         self.selectedStrategyIndex = selectedStringIndex
         
     }
@@ -63,7 +52,7 @@ struct StrategyTable: StrategyTablePublicValue {
     }
     
     private func _getNextValue() -> Int {
-        guard let nextValueChar =  selectedStrategy[self.selectedTable].characterAtIndex(index: self.selectedStrategyIndex) else { fatalError() }
+        guard let nextValueChar =  selectedStrategy[self.selectedTableIndex].characterAtIndex(index: self.selectedStrategyIndex) else { fatalError() }
         return Int(String(nextValueChar))!
     }
     
@@ -76,10 +65,10 @@ struct StrategyTable: StrategyTablePublicValue {
     
     private mutating func evaluate(win: Bool) {
         if win {
-            point[selectedTable] = point[selectedTable] + 1
+            point[selectedTableIndex] = point[selectedTableIndex] + 1
             
         } else {
-            point[selectedTable] = point[selectedTable] - 1
+            point[selectedTableIndex] = point[selectedTableIndex] - 1
         }
     }
     
@@ -89,15 +78,15 @@ struct StrategyTable: StrategyTablePublicValue {
     }
     
     private mutating func setNextValue() {
-        var max = -1000000000
+        var maxValue = point[0]
         var maxIndex = 0
         for (i, value) in point.enumerated() {
-            if value > max {
-                max = value
+            if value > maxValue {
+                maxValue = value
                 maxIndex = i
             }
         }
-        selectedTable = maxIndex
+        selectedTableIndex = maxIndex
         selectedStrategyIndex = Int(history, radix: 2)!
     }
 }

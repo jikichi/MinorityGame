@@ -8,5 +8,17 @@
 import Foundation
 
 class Analyze {
+    var minorityGame: MinorityGame
     
+    init(N: Int, m: Int, s: Int, times: Int) {
+        let minoritygame = MinorityGame(N: N, m: m, s: s)
+        self.minorityGame = minoritygame
+        
+        minoritygame.playGame(times: times)
+    }
+    
+    public func anaryze() {
+        let result: [String] = [minorityGame.getAgentsRankingArray().description]
+        print(result.joined(separator: ","))
+    }
 }

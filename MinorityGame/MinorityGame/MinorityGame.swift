@@ -7,7 +7,21 @@
 
 import Foundation
 
-class MinorityGame {
+protocol MinorityGameAnalyzeProtocol {
+    func getAgentsRankingArray() -> Array<Int>
+}
+
+class MinorityGame: MinorityGameAnalyzeProtocol {
+    func getAgentsRankingArray() -> Array<Int> {
+        var array = [Int]()
+        for i in 0 ..< N {
+            array.append(agents[i].winCount)
+        }
+        return array.sorted(by: {(a, b) in
+            return a > b
+        })
+    }
+    
     var agents: [Agent]
     var N: Int
     

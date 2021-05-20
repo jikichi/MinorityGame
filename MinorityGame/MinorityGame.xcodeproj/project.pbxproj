@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0886BC262654F07F00C5816B /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886BC252654F07F00C5816B /* Random.swift */; };
 		08906F49264FC4A400C78A66 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F48264FC4A400C78A66 /* main.swift */; };
 		08906F50264FC4F900C78A66 /* AgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F4F264FC4F900C78A66 /* AgentModel.swift */; };
 		08906F522651FE0100C78A66 /* StrategyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F512651FE0100C78A66 /* StrategyModel.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0886BC252654F07F00C5816B /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		08906F45264FC4A400C78A66 /* MinorityGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MinorityGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		08906F48264FC4A400C78A66 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		08906F4F264FC4F900C78A66 /* AgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentModel.swift; sourceTree = "<group>"; };
@@ -48,9 +50,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0886BC242652693C00C5816B /* OutputData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OutputData;
+			sourceTree = "<group>";
+		};
 		08906F3C264FC4A400C78A66 = {
 			isa = PBXGroup;
 			children = (
+				0886BC242652693C00C5816B /* OutputData */,
 				08906F47264FC4A400C78A66 /* MinorityGame */,
 				08906F46264FC4A400C78A66 /* Products */,
 			);
@@ -73,6 +83,7 @@
 				08906F552652260E00C78A66 /* MinorityGame.swift */,
 				08906F4F264FC4F900C78A66 /* AgentModel.swift */,
 				08906F512651FE0100C78A66 /* StrategyModel.swift */,
+				0886BC252654F07F00C5816B /* Random.swift */,
 			);
 			path = MinorityGame;
 			sourceTree = "<group>";
@@ -139,6 +150,7 @@
 				08906F582652265B00C78A66 /* Analyze.swift in Sources */,
 				08906F49264FC4A400C78A66 /* main.swift in Sources */,
 				08906F50264FC4F900C78A66 /* AgentModel.swift in Sources */,
+				0886BC262654F07F00C5816B /* Random.swift in Sources */,
 				08906F562652260E00C78A66 /* MinorityGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +279,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HLN6Z6G9H;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -278,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HLN6Z6G9H;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

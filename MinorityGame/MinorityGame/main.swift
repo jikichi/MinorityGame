@@ -7,11 +7,19 @@
 
 import Foundation
 
-let N = 1001
+let N = 201
 let m = 3
-let s = 2
+let s = 3
+let seed = 100
 
-let minoritygame = MinorityGame(N: N, m: m, s: s)
-minoritygame.playGame(times: 10000)
+let analyze = Analyze(N: N, m: m, s: s, times: 1000000)
+analyze.anaryze()
+let table = StrategyTable(m: 3, s: 2)
+randomValue()
 print("the end")
+
+for _ in 0 ..< 100 {
+    print(randomM2(s: s))
+}
+
 

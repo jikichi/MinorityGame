@@ -14,6 +14,9 @@
 		08906F54265223A100C78A66 /* String+CharacterAtIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F53265223A100C78A66 /* String+CharacterAtIndex.swift */; };
 		08906F562652260E00C78A66 /* MinorityGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F552652260E00C78A66 /* MinorityGame.swift */; };
 		08906F582652265B00C78A66 /* Analyze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F572652265B00C78A66 /* Analyze.swift */; };
+		08906F5E26562B7600C78A66 /* DataSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F5D26562B7600C78A66 /* DataSample.swift */; };
+		08906F6126562BDA00C78A66 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F6026562BDA00C78A66 /* NeuralNetwork.swift */; };
+		08906F64265639EA00C78A66 /* RandomStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F63265639EA00C78A66 /* RandomStrategy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +40,9 @@
 		08906F53265223A100C78A66 /* String+CharacterAtIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CharacterAtIndex.swift"; sourceTree = "<group>"; };
 		08906F552652260E00C78A66 /* MinorityGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorityGame.swift; sourceTree = "<group>"; };
 		08906F572652265B00C78A66 /* Analyze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyze.swift; sourceTree = "<group>"; };
+		08906F5D26562B7600C78A66 /* DataSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSample.swift; sourceTree = "<group>"; };
+		08906F6026562BDA00C78A66 /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
+		08906F63265639EA00C78A66 /* RandomStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomStrategy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +89,20 @@
 				08906F552652260E00C78A66 /* MinorityGame.swift */,
 				08906F4F264FC4F900C78A66 /* AgentModel.swift */,
 				08906F512651FE0100C78A66 /* StrategyModel.swift */,
+				08906F63265639EA00C78A66 /* RandomStrategy.swift */,
 				0886BC252654F07F00C5816B /* Random.swift */,
+				08906F5C26562B5D00C78A66 /* CNN */,
 			);
 			path = MinorityGame;
+			sourceTree = "<group>";
+		};
+		08906F5C26562B5D00C78A66 /* CNN */ = {
+			isa = PBXGroup;
+			children = (
+				08906F5D26562B7600C78A66 /* DataSample.swift */,
+				08906F6026562BDA00C78A66 /* NeuralNetwork.swift */,
+			);
+			path = CNN;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +167,11 @@
 				08906F582652265B00C78A66 /* Analyze.swift in Sources */,
 				08906F49264FC4A400C78A66 /* main.swift in Sources */,
 				08906F50264FC4F900C78A66 /* AgentModel.swift in Sources */,
+				08906F6126562BDA00C78A66 /* NeuralNetwork.swift in Sources */,
 				0886BC262654F07F00C5816B /* Random.swift in Sources */,
 				08906F562652260E00C78A66 /* MinorityGame.swift in Sources */,
+				08906F5E26562B7600C78A66 /* DataSample.swift in Sources */,
+				08906F64265639EA00C78A66 /* RandomStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

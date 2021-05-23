@@ -8,32 +8,49 @@
 import Foundation
 import GameplayKit
 
-private let gaussian2 = GKGaussianDistribution(randomSource: GKMersenneTwisterRandomSource(seed: UInt64(seed)), lowestValue: 0, highestValue: 1)
-
-private let gaussianM = GKGaussianDistribution(randomSource: GKMersenneTwisterRandomSource(seed: UInt64(seed)), lowestValue: 0, highestValue: m - 1)
-private let gaussianM2 = GKGaussianDistribution(randomSource: GKMersenneTwisterRandomSource(seed: UInt64(seed)), lowestValue: 0, highestValue: Int(pow(Double(2), pow(Double(2), Double(m)))) - 1)
-
-public func randomValue() -> Int {
-    return gaussian2.nextInt()
-}
-public func randomHistory(m: Int) -> String {
-    var randomString = ""
-    for _ in 0 ..< m {
-        randomString += String(randomValue())
+class Random {
+    private let gaussian2: GKGaussianDistribution
+    private let gaussianM: GKGaussianDistribution
+    private let gaussianM2: GKGaussianDistribution
+    private let gaussianS: GKGaussianDistribution
+    
+    init(seed: Int, m: Int, s: Int) {
+        let gaussian2 = GKGaussianDistribution(randomSource: GKMersenneTwisterRandomSource(seed: UInt64(seed)), lowestValue: 0, highestValue: 1)
+        
+        let gaussianM = GKGaussianDistribution(randomSource: GKMersenneTwisterRandomSource(seed: UInt64(seed)), lowestValue: 0, highestValue: m - 1)
+        let gaussianM2 = GKGaussianDistribution(randomSource: GKMersenneTwisterRandomSource(seed: UInt64(seed)), lowestValue: 0, highestValue: Int(pow(Double(2), pow(Double(2), Double(m)))) - 1)
+        let gaussianS = GKGaussianDistribution(randomSource: GKMersenneTwisterRandomSource(seed: UInt64(seed)), lowestValue: 0, highestValue: s - 1)
+        self.gaussian2 = gaussian2
+        self.gaussianM = gaussianM
+        self.gaussianM2 = gaussianM2
+        self.gaussianS = gaussianS
     }
-    return randomString
-}
-public func randomM() -> Int {
-    return gaussianM.nextInt()
-}
-public func randomM2(s: Int) -> [Int] {
-    var intSetArray: Set<Int> = []
-    var intArray: [Int] = []
-    while intSetArray.count != s {
-        intSetArray.insert(gaussianM2.nextInt())
+    
+    public func randomValue() -> Int {
+        return gaussian2.nextInt()
     }
-    for i in intSetArray {
-        intArray.append(i)
+    public func randomHistory(m: Int) -> String {
+        var randomString = ""
+        for _ in 0 ..< m {
+            randomString += String(randomValue())
+        }
+        return randomString
     }
-    return intArray
+    public func randomM() -> Int {
+        return gaussianM.nextInt()
+    }
+    public func randomS() -> Int {
+        return gaussianS.nextInt()
+    }
+    public func randomM2(s: Int) -> [Int] {
+        var intSetArray: Set<Int> = []
+        var intArray: [Int] = []
+        while intSetArray.count != s {
+            intSetArray.insert(gaussianM2.nextInt())
+        }
+        for i in intSetArray {
+            intArray.append(i)
+        }
+        return intArray
+    }
 }

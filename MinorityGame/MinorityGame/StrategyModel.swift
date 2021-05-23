@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol StrategyTablePublicValue {
+protocol StrategyModelProtocol {
     mutating func getNextValue() -> Int
     mutating func evaluationStrategy(win: Bool, result: String) -> Void
 }
 
-struct StrategyTable: StrategyTablePublicValue {
+struct StrategyTable: StrategyModelProtocol {
     var point: [Int] // [0, 1]
 //    var table: [String] // ["001", "010"]
     let selectedStrategy: [String] // [00000001, 00000101, 11111111]
@@ -26,21 +26,21 @@ struct StrategyTable: StrategyTablePublicValue {
             self.point.append(0)
         }
         
-        var tableValues: [String] = randomM2(s: s).map { String($0, radix: 2) }
+        var tableValues: [String] = random.randomM2(s: s).map { String($0, radix: 2) }
         
 //        var stringTables = tableValues.prefix(s).map { String($0, radix: 2) }
         let historyLenght = Int(pow(Double(2), Double(m)))
         for i in 0 ..< tableValues.count {
-            while (historyLenght !=  tableValues[i].count) {
+            while (historyLenght != tableValues[i].count) {
                 tableValues[i] = "0" + tableValues[i]
                 
             }
         }
         self.selectedStrategy = tableValues
         
-        self.selectedTableIndex = randomM()
+        self.selectedTableIndex = random.randomS()
         
-        self.history = randomHistory(m: m)
+        self.history = random.randomHistory(m: m)
         
         let selectedStringIndex = Int(history, radix: 2)!
         self.selectedStrategyIndex = selectedStringIndex

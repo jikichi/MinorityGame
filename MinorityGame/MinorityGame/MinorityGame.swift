@@ -25,11 +25,11 @@ class MinorityGame: MinorityGameAnalyzeProtocol {
     var agents: [Agent]
     var N: Int
     
-    init(N: Int, m: Int, s: Int) {
+    init(N: Int, m: Int, s: Int, dependency: [StrategyModelProtocol]) {
         var agents: [Agent] = []
         self.N = N
         for i in 0 ..< N {
-            var agent = Agent(id: UInt64(i), m: m, s: s)
+            let agent = Agent(id: UInt64(i), m: m, s: s, dependency: dependency[i])
             agents.append(agent)
         }
         self.agents = agents

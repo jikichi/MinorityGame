@@ -21,9 +21,9 @@ struct Agent: AgentPublicValues, Identifiable {
     let id: UInt64
     var winCount: Int
     var nextValue: Int
-    var strategyTable: StrategyTable // strategyTables[0].table => ["001", "010"]
+    var strategyTable: StrategyTable
     
-    init(id: UInt64, m: Int, s: Int) {
+    init(id: UInt64, m: Int, s: Int, dependency: StrategyModelProtocol) {
         self.id = id
         self.winCount = 0
         self.strategyTable = StrategyTable.init(m: m, s: s)

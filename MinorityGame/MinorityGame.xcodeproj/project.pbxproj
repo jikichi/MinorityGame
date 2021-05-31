@@ -17,6 +17,7 @@
 		08906F5E26562B7600C78A66 /* DataSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F5D26562B7600C78A66 /* DataSample.swift */; };
 		08906F6126562BDA00C78A66 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F6026562BDA00C78A66 /* NeuralNetwork.swift */; };
 		08906F64265639EA00C78A66 /* RandomStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08906F63265639EA00C78A66 /* RandomStrategy.swift */; };
+		2F11DEDE04949148283D90D0 /* Pods_MinorityGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F7C91A65C46BBD75D89584 /* Pods_MinorityGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,9 @@
 		08906F5D26562B7600C78A66 /* DataSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSample.swift; sourceTree = "<group>"; };
 		08906F6026562BDA00C78A66 /* NeuralNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
 		08906F63265639EA00C78A66 /* RandomStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomStrategy.swift; sourceTree = "<group>"; };
+		B4F7C91A65C46BBD75D89584 /* Pods_MinorityGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinorityGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B75B1A505080EC1D15C0EF88 /* Pods-MinorityGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinorityGame.release.xcconfig"; path = "Target Support Files/Pods-MinorityGame/Pods-MinorityGame.release.xcconfig"; sourceTree = "<group>"; };
+		BB5F68F74856E63680787141 /* Pods-MinorityGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinorityGame.debug.xcconfig"; path = "Target Support Files/Pods-MinorityGame/Pods-MinorityGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F11DEDE04949148283D90D0 /* Pods_MinorityGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +74,8 @@
 				0886BC242652693C00C5816B /* OutputData */,
 				08906F47264FC4A400C78A66 /* MinorityGame */,
 				08906F46264FC4A400C78A66 /* Products */,
+				511C928BB2F5807D6FD7E3FF /* Pods */,
+				254F4DCF80411A472FFA33FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,24 @@
 			path = CNN;
 			sourceTree = "<group>";
 		};
+		254F4DCF80411A472FFA33FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4F7C91A65C46BBD75D89584 /* Pods_MinorityGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		511C928BB2F5807D6FD7E3FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB5F68F74856E63680787141 /* Pods-MinorityGame.debug.xcconfig */,
+				B75B1A505080EC1D15C0EF88 /* Pods-MinorityGame.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,6 +137,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08906F4C264FC4A400C78A66 /* Build configuration list for PBXNativeTarget "MinorityGame" */;
 			buildPhases = (
+				747F487EC85C4968BEE12EDC /* [CP] Check Pods Manifest.lock */,
 				08906F41264FC4A400C78A66 /* Sources */,
 				08906F42264FC4A400C78A66 /* Frameworks */,
 				08906F43264FC4A400C78A66 /* CopyFiles */,
@@ -156,6 +182,31 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		747F487EC85C4968BEE12EDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MinorityGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08906F41264FC4A400C78A66 /* Sources */ = {
@@ -295,6 +346,7 @@
 		};
 		08906F4D264FC4A400C78A66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB5F68F74856E63680787141 /* Pods-MinorityGame.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HLN6Z6G9H;
@@ -307,6 +359,7 @@
 		};
 		08906F4E264FC4A400C78A66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B75B1A505080EC1D15C0EF88 /* Pods-MinorityGame.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HLN6Z6G9H;

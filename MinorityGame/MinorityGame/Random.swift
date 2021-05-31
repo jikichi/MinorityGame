@@ -27,7 +27,7 @@ class Random {
     }
     
     public func randomValue() -> Int {
-        return gaussian2.nextInt()
+        return abs(gaussian2.nextInt())
     }
     public func randomHistory(m: Int) -> String {
         var randomString = ""
@@ -37,16 +37,16 @@ class Random {
         return randomString
     }
     public func randomM() -> Int {
-        return gaussianM.nextInt()
+        return abs(gaussianM.nextInt())
     }
     public func randomS() -> Int {
-        return gaussianS.nextInt()
+        return abs(gaussianS.nextInt())
     }
     public func randomM2(s: Int) -> [Int] {
         var intSetArray: Set<Int> = []
         var intArray: [Int] = []
         while intSetArray.count != s {
-            intSetArray.insert(gaussianM2.nextInt())
+            intSetArray.insert(abs(gaussianM2.nextInt()))
         }
         for i in intSetArray {
             intArray.append(i)

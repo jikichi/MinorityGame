@@ -36,6 +36,7 @@ struct StrategyTable: StrategyModelProtocol {
                 
             }
         }
+        print(tableValues)
         self.selectedStrategy = tableValues
         
         self.selectedTableIndex = random.randomS()
@@ -53,6 +54,7 @@ struct StrategyTable: StrategyModelProtocol {
     
     private func _getNextValue() -> Int {
         guard let nextValueChar =  selectedStrategy[self.selectedTableIndex].characterAtIndex(index: self.selectedStrategyIndex) else { fatalError() }
+        print(nextValueChar)
         return Int(String(nextValueChar))!
     }
     

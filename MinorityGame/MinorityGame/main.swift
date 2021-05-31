@@ -8,10 +8,10 @@
 import Foundation
 
 private let N = 201
-private let m = 3
+private let m = 5
 private let s = 2
-private let seed = 100
-private let times = 1000
+private let seed = 0
+private let times = 1000000
 
 let random = Random(seed: seed, m: m, s: s)
 
@@ -26,7 +26,7 @@ for _ in 0 ..< N {
     randomStrategyTables.append(RandomStrategy())
 }
 
-let analyze = Analyze(N: N, m: m, s: s, times: times, dependency: randomStrategyTables)
+let analyze = Analyze(N: N, m: m, s: s, times: times, dependency: strategyTables)
 analyze.anaryze()
 
 print("the end")

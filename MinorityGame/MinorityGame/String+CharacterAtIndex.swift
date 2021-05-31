@@ -11,6 +11,7 @@ extension String {
     func characterAtIndex(index: Int) -> Character? {
         for (cur, char) in enumerated() {
             if cur == index {
+                print(self)
                 return char
             }
         }
